@@ -13,7 +13,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && substr($event['message']['text'],0,4) == 'lamo' ) {
 			$aa = strpos($event['message']['text'],' ');
 			$bb  = strlen($event['message']['text']);	
-			$an = substr($event['message']['text'],$aa , $bb );
+			$an = substr($event['message']['text'],$aa+1 , $bb );
 			// Get text sent
 		        $conn =  mysqli_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
 			$sql = "select * from ans where q like  '% ". $an . "%' ";
