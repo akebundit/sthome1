@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			
 			// คำถาม
-			if (ststr($an,'กี่โมง')) {
+			if (strstr($an,'กี่โมง')) {
 				$ans = date('h:i:sa');
 			}
 			
