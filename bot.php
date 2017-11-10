@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 				else
 				{
 					
-					$and='ไม่รู้เรื่อง';
+					$ans='ไม่รู้เรื่อง';
 				}
 		
 	              	mysqli_close($conn);      
