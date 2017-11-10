@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],$aa , $bb );
 			// Get text sent
-		        $conn =  mysql_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
+		        $conn =  mysqli_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
 			$sql = 'select * from ans where q like '. $an . '%' ; 
 			$result = mysqli_query($conn,$sql);
 			if (mysqli_num_rows($result) > 0 ) {
