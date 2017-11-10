@@ -19,8 +19,8 @@ if (!is_null($events['events'])) {
 			$sql = 'select * from ans where q like '. $an . '%' ; 
 			$result = mysqli_query($conn,$sql);
 			if (mysqli_num_rows($result) > 0 ) {
-				while  ($row = $result->fetch_assoc()) {
-					$ans = $rom['a'];
+				while  ($row = mysqli_fetch_assoc($result)) {
+					$ans = $row['a'];
 			} 
 			} else {
 				$ans='ไม่รู้เรื่อง';
