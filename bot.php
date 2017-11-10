@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 					$ans = $row['a'];
 			} 
 			} else {
-				$ans= $sql;
+				$ans= $an;
 			}
 				
 			 
