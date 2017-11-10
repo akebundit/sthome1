@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			// คำถาม
 			if (ststr($an,'กี่โมง')) {
 				$ans = date('h:i:sa');
-				{
+			}
 			
 			
 			
