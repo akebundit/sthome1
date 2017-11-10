@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			
 			// คำถาม
 			if (strstr($an,'กี่โมง')) {
-				$ans = date('hh:ii:sa');
+				$ans = date('h:i:sa');
 			}
 			if (strstr($an,'กินอะไร')) {
 				$ans = 'ก๋วยเตี๋ยว';
