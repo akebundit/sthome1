@@ -11,6 +11,9 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && substr($event['message']['text'],0,6) == 'sthome' ) {
+			$1len = strpos($event['message']['text'],' ');
+			$len  = strlen($event['message']['type']);	
+			$an = substr($event['message']['text'],$1len + 1 , $len )
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -19,7 +22,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => 'แจ่ม'
+				'text' => $an
 				//$text
 			];
 
