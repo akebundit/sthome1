@@ -21,13 +21,12 @@ if (!is_null($events['events'])) {
 			if (mysqli_num_rows($result) > 0 ) {
 				$row = mysqli_fetch_assoc($result)
 					$ans = $rom['a'];
-			}
-				else
-				{
-					
+			} 
+				
+			if (strlen($ans) == 0 ) {
 					$ans='ไม่รู้เรื่อง';
-				}
-		
+			}
+			 
 	              	mysqli_close($conn);      
 	
 		
