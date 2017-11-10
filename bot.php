@@ -15,21 +15,22 @@ if (!is_null($events['events'])) {
 			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],$aa , $bb );
 			// Get text sent
-		 $searcht = $an;
-		 $matches = array();
-			$handle = $fopen('data1.txt','x');
-			if ($handle) {
-				while (!feof($handle))
-				{
-					$buffer = fgets($handle);
-					if (strpos($buffer,$searcht) !== FALSE)
-						$matches[] = $buffer;
-				}
-				fclose($handle);
-			}
-			
-			$an = $matches;
 		
+		       if (strstr($an,'กี่โมง')) {
+				$ans = 'ไม่บอก';
+			}
+			if (strstr($an,'กินอะไร')) {
+				$ans = 'ก๋วยเตี๋ยว';
+			}
+			if (strstr($an,'เตี๋ยวเจ้าไหน')) {
+				$ans = 'หัวโค้ง ยายเฉื่อย กังหัน โลมาชอบเส้น';
+			}
+			if (strstr($an,'เด็กไหน')) {
+				$ans = 'ชอบเป็นเด็กชนบท';
+			}
+			if (strstr($an,'ร้านไหน')) {
+				$ans = 'ข้างทาง';
+			}
 			
 			// คำตอบ
 			
