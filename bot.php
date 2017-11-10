@@ -15,29 +15,22 @@ if (!is_null($events['events'])) {
 			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],$aa , $bb );
 			// Get text sent
+		        $conn =  mysql_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
+			$sql = 'select * from ans where q like '. $an . '%' ; 
+			$result = mysqli_query($conn,$sql);
+			if (mysqli_num_rows($result) > 0 ) {
+				$row = mysqli_fetch_assoc($result)
+					$ans = $rom['a'];
+			}
+				else
+				{
+					
+					$and='ไม่รู้เรื่อง';
+				}
 		
-		       if (strstr($an,'กี่โมง')) {
-				$ans = 'ไม่บอก';
-			}
-			if (strstr($an,'กินอะไร')) {
-				$ans = 'ก๋วยเตี๋ยว';
-			}
-			if (strstr($an,'เตี๋ยวเจ้าไหน')) {
-				$ans = 'หัวโค้ง ยายเฉื่อย กังหัน โลมาชอบเส้น';
-			}
-			if (strstr($an,'เด็กไหน')) {
-				$ans = 'ชอบเป็นเด็กชนบท';
-			}
-			if (strstr($an,'ร้านไหน')) {
-				$ans = 'ข้างทาง';
-			}
-			
-			if (strstr($an,'กินเบียร์')) {
-				$ans = 'ไม่ให้กิน ไม่ให้กิน';
-			}
-			if (strstr($an,'อย่าเกา')) {
-				$ans = 'ก็มันคัน อดทนไม่ได้ จะให้ทำยังงัย';
-			}
+	              	mysqli_close($conn);      
+	
+		
 			// คำตอบ
 			
 			
