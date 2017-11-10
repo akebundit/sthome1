@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
 				fclose($handle);
 			}
 			
-			
+			$an = $matches;
 		
 			
 			// คำตอบ
