@@ -15,6 +15,17 @@ if (!is_null($events['events'])) {
 			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],$aa , $bb );
 			// Get text sent
+			
+			// คำถาม
+			if (ststr($an,'กี่โมง')) {
+				$ans = date('h:i:sa');
+				{
+			
+			
+			
+			// คำตอบ
+			
+			
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -22,7 +33,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $an
+				'text' => $ans
 				//$text
 			];
 
