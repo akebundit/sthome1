@@ -20,6 +20,12 @@ if (!is_null($events['events'])) {
 			if (strstr($an,'กี่โมง')) {
 				$ans = date('h:i:sa');
 			}
+			if (strstr($an,'กินอะไร')) {
+				$ans = 'ก๋วยเตี๋ยว';
+			}
+			if (strstr($an,'เตี๋ยวเจ้าไหน')) {
+				$ans = 'หัวโค้ง ยายเฉื่อย กังหัน โลมาชอบเส้น';
+			}
 			
 			
 			
