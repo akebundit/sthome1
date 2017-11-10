@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
 		 $searcht = $an;
 		 $matches = array();
-			$handle = $fopen('data.txt','r');
+			$handle = $fopen('data.txt','x');
 			if ($handle) {
 				while (!feof($handle))
 				{
