@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			$an = substr($event['message']['text'],$aa , $bb );
 			// Get text sent
 		        $conn =  mysqli_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
-			$sql = 'select * from ans where q = '. $an ; 
+			$sql = 'select * from ans where q = '. $an . '%'; 
 			$result = mysqli_query($conn,$sql);
 			if (mysqli_num_rows($result) > 0 ) {
 				while  ($row = mysqli_fetch_assoc($result)) {
