@@ -13,7 +13,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && substr($event['message']['text'],0,6) == 'sthome' ) {
 			$1len = strpos($event['message']['text'],' ');
 			$len  = strlen($event['message']['type']);	
-			$an = substr($event['message']['text'],$1len + 1 , $len )
+			$an = substr($event['message']['text'],$1len  , $len )
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
