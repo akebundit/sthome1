@@ -12,7 +12,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && substr($event['message']['text'],0,6) == 'sthome' ) {
 			$aa = strpos($event['message']['text'],' ');
-			$bb  = strlen($event['message']['type']);	
+			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],$aa , $bb );
 			// Get text sent
 			$text = $event['message']['text'];
