@@ -15,12 +15,14 @@ if (!is_null($events['events'])) {
 			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],5 , $bb );
 			// Get text sent
-		        $conn =  mysqli_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
+		        // $conn =  mysqli_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
+			mysql_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
 			$sql = "select * from ans where q like  '%". $an . "%' ";
-			$result = mysqli_query($conn,$sql);
-			if (mysqli_num_rows($result) > 0 ) {
-				while  ($row = mysqli_fetch_assoc($result)) {
-					$ans = $row['a'];
+			$result = mysql_query($conn,$sql);
+			$count_row = mysql_num_rows($result);
+			if ($count_row > 0 ) {
+				while($result = mysql_fetch_array($resource)) {
+					$aa = $result['a'];
 			} 
 			} else {
 				$ans= $row['a'];
@@ -30,7 +32,7 @@ if (!is_null($events['events'])) {
 					
 			 
 			 
-	              	mysqli_close($conn);      
+	              	mysql_close($conn);      
 	
 		
 			// คำตอบ
