@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],5 , $bb );
 		
-		$ans = $an		
+		$ans = $an;		
 			 
 					
 			 
