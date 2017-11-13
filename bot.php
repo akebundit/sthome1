@@ -23,10 +23,10 @@ if (!is_null($events['events'])) {
 			mysql_query("use bot");
 			mysql_query("SET NAMES UTF8");
 			$sql = "select * from ans where q like  '%". $an . "%' ";
-			$result = mysql_query($sql);
-			$count_row = mysql_num_rows($result);
+			$resource  = mysql_query($sql);
+			$count_row = mysql_num_rows($resource);
 			if ($count_row > 0 ) {
-				while($result = mysql_fetch_array($result)) {
+				while($result = mysql_fetch_array($resource)) {
 					$aa = $result['a'];
 			} 
 			} else {
