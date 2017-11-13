@@ -16,9 +16,11 @@ if (!is_null($events['events'])) {
 			$an = substr($event['message']['text'],5 , $bb );
 			// Get text sent
 		        // $conn =  mysqli_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
-			mysql_connect('203.150.230.190', 'klangplaza', 'yos_aha','bot');
+			mysql_connect('203.150.230.190', 'klangplaza', 'yos_aha');
+			mysql_query("use bot");
+			mysql_query("SET NAMES UTF8");
 			$sql = "select * from ans where q like  '%". $an . "%' ";
-			$result = mysql_query($conn,$sql);
+			$result = mysql_query($sql);
 			$count_row = mysql_num_rows($result);
 			if ($count_row > 0 ) {
 				while($result = mysql_fetch_array($resource)) {
@@ -31,8 +33,7 @@ if (!is_null($events['events'])) {
 			 
 					
 			 
-			 
-	              	mysql_close($conn);      
+			   
 	
 		
 			// คำตอบ
