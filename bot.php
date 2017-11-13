@@ -10,13 +10,29 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text' ) {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && substr($event['message']['text'],0,4) == 'lamo' 
+) {
 			$aa = strpos($event['message']['text'],' ');
 			$bb  = strlen($event['message']['text']);	
 			$an = substr($event['message']['text'],5 , $bb );
 		
-		$ans = $an;		
-			 
+		 		
+			$Setup_Server = '203.150.230.190';
+			$Setup_User = 'klangplaza';
+			$Setup_Pwd = 'yos_aha';
+			mysql_connect($Setup_Server,$Setup_User,$Setup_Pwd);
+			mysql_query("use bot");
+			mysql_query("SET NAMES UTF8");
+			$sql = "select * from ans where q like  '%". $an . "%' ";
+			$resource  = mysql_query($sql);
+			$count_row = mysql_num_rows($resource);
+			if ($count_row > 0 ) {
+				while($result = mysql_fetch_array($resource)) {
+					$ans = $result['a'];
+			} 
+			} else {
+				$ans= $sql;
+			}
 					
 			 
 			   
