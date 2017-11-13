@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 			$count_row = mysql_num_rows($resource);
 			if ($count_row > 0 ) {
 				while($result = mysql_fetch_array($resource)) {
-					$aa = $result['a'];
+					$ans = $result['a'];
 			} 
 			} else {
 				$ans= $sql;
