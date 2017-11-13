@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 					$aa = $result['a'];
 			} 
 			} else {
-				$ans= $row['a'];
+				$ans= $sql;
 			}
 				
 			 
